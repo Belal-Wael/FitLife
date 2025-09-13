@@ -1,0 +1,556 @@
+:root {
+    --primary-color: #ae4c85;
+    --secondary-color: #721c5e;
+    --nav-h: 70px;
+    --light-green: #e8f5f0;
+    --dark-green: #5a2d54;
+    --accent-color: #b66ba5;
+    --text-dark: #502c45;
+    --text-light: #8d7f8c;
+    --border-color: #e1e8ed;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #f8f9fa;
+}
+
+.primary-color {
+    color: var(--primary-color) !important;
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Diet Navigation */
+.diet-nav {
+    background: white;
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.diet-nav .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.diet-nav-item {
+    background: var(--light-green);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.diet-nav-item:hover,
+.diet-nav-item.active {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 174, 145, 0.4);
+}
+
+/* Hero Section for Diet Plans */
+.diet-hero {
+    background: linear-gradient(135deg, rgb(174, 76, 133, 0.8), rgb(114, 28, 94, 0.8));
+    color: black;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.diet-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/images/slider3.jpg') no-repeat center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.diet-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.diet-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.diet-hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Diet Info Sections */
+.diet-info-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.diet-info-section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Food Lists */
+.food-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.food-category {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.food-category.allowed {
+    border-left-color: #27ae60;
+}
+
+.food-category.restricted {
+    border-left-color: #e74c3c;
+}
+
+.food-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.food-category.allowed h3 {
+    color: #27ae60;
+}
+
+.food-category.restricted h3 {
+    color: #e74c3c;
+}
+
+.food-list {
+    list-style: none;
+}
+
+.food-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ecf0f1;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.food-list li:last-child {
+    border-bottom: none;
+}
+
+.food-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.food-category.allowed .food-list li::before {
+    color: #27ae60;
+}
+
+.food-category.restricted .food-list li::before {
+    color: #e74c3c;
+}
+
+/* Weekly Meal Plan */
+.meal-plan {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-top: 40px;
+}
+
+.meal-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.meal-day {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.meal-day:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.meal-day h4 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.meal-time {
+    margin-bottom: 15px;
+}
+
+.meal-time h5 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.meal-time p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Recipe Cards */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 25px;
+}
+
+.recipe-content h3 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.recipe-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.recipe-ingredients {
+    margin-bottom: 20px;
+}
+
+.recipe-ingredients h5 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.recipe-ingredients ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recipe-ingredients li {
+    padding: 3px 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.recipe-ingredients li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+
+
+/* Tips Section */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+
+
+.tip-card h4 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tip-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Printable Table */
+.printable-section {
+    background: white;
+    padding: 60px 0;
+    border-top: 3px solid var(--primary-color);
+}
+
+.tracking-table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-top: 40px;
+}
+
+.tracking-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracking-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.tracking-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.tracking-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.tracking-table tr:hover {
+    background: var(--light-green);
+}
+
+.print-btn {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.print-btn:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 90, 74, 0.4);
+}
+
+/* Back to Home Button */
+.back-to-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-home:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .diet-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .food-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .meal-plan-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tracking-table {
+        overflow-x: auto;
+    }
+    
+    .diet-nav .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .diet-nav-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .diet-nav, .print-btn, .btn, .back-to-home {
+        display: none !important;
+    }
+    
+    .diet-info-section {
+        padding: 20px 0;
+    }
+    
+    .tracking-table {
+        box-shadow: none;
+        border: 2px solid #000;
+    }
+    
+    .tracking-table th {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .section-title {
+        font-size: 18pt;
+        page-break-after: avoid;
+    }
+    
+    .recipe-card, .tip-card {
+        page-break-inside: avoid;
+    }
+}
