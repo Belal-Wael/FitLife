@@ -1,0 +1,157 @@
+.sidebar {
+    border-right: 1px solid #dee2e6;
+    width: 300px;
+
+}
+.sidebar h1{
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #ae4c85;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    border: 1px solid #ae4c85;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    color: #ae4c85;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sidebar ul li.active{
+    background-color: #ae4c85;
+    color: white;
+}
+.sidebar .logout-btn{
+    margin-top: 20px;
+    background: #ae4c85;
+    color: white;
+    border: 2px solid #ae4c85;
+    padding: 14px 28px;
+}
+.sidebar ul li:hover {
+    background-color: #ae4c85;
+    color: white;
+}
+
+.sidebar .bi-arrow-left-circle-fill{
+    position: absolute;
+    top: 45%;
+    right: -28px;
+    font-size: 27px;
+    cursor: pointer;
+    color: #d65c79;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    transform: rotate(180deg);
+    display: none;
+}
+.sidebar.toggle-sidebar{
+    transform: translateX(0);
+}
+.bi-arrow-left-circle-fill.toggle{
+    transform: rotate(0deg);
+}
+
+.diets-container,
+.exercises-container,
+.users-container,
+.contacts-container {
+    max-width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+#btn-update-diet,
+#btn-update-exercise{
+  background: #ae4c85;
+  color: white;
+  border: 2px solid #ae4c85;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .sidebar{
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    .diets-container,
+    .exercises-container{
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .sidebar .bi-arrow-left-circle-fill{
+        right: -32px;
+        top: 45%;
+        font-size: 27px;
+        cursor: pointer;
+        color: #d65c79;
+        display: block;
+    }
+    .sidebar .bi-arrow-left-circle-fill:hover{
+        transition: all 0.3s ease;
+        color: #ae4c85;
+    }
+}
+
+/* Inputs and adjacent buttons styling */
+.form-control:focus,
+.form-select:focus {
+    border-color: #ae4c85;
+    box-shadow: 0 0 0 0.2rem rgba(174, 76, 133, 0.15);
+}
+
+.input-group .input-group-text {
+    color: #ae4c85;
+    background-color: #f8f1f5;
+    border-color: #ae4c85;
+}
+
+/* Align group buttons with brand color */
+.input-group .btn-outline-danger {
+    color: #ae4c85;
+    border-color: #ae4c85;
+}
+.input-group .btn-outline-danger:hover,
+.input-group .btn-outline-danger:focus {
+    background-color: #ae4c85;
+    color: #fff;
+    border-color: #ae4c85;
+}
+
+/* Keep add buttons consistent */
+.btn-outline-primary {
+    color: #ae4c85;
+    border-color: #ae4c85;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: #ae4c85;
+    color: #fff;
+    border-color: #ae4c85;
+}
